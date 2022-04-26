@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HART,
+    Health AI Risk Taxonomy </title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+    var respecConfig = {
+      // shortName: "",
+      // title: "",
+      subtitle: "version 0.1",
+      edDraftURI: "https://w3.org/ns/hart",
+      github: {
+        repoURL: "https://github.com/delaramglp/hart",
+        branch: "main"
+      },
+      // subjectPrefix: "[]",
+      editors: [{
+        "name": "Delaram Golpaygani",
+        "url": "https://protect-network.eu/people/delaram-golpayegani-esr-4/",
+        "company": "Trinity College Dublin",
+        "companyURL": "https://www.tcd.ie/",
+        "mailto": "delaram.golpayegani@adaptcentre.ie"
+      },
+
+      {
+        "name": "Leon Rossmaier",
+        "url": "https://protect-network.eu/people/leon-rossmaier-esr-6/",
+        "company": "University of Twente ",
+        "companyURL": "https://www.utwente.nl/en/",
+        "mailto": "l.w.s.rossmaier@utwente.nl"
+      },
+      {
+        "name": "Josh Hovsha",
+        "url": "https://protect-network.eu/people/josh-hovsha-esr-2/",
+        "company": "Castlebridge",
+        "companyURL": "https://castlebridge.ie/",
+        "mailto": "Joshua.Hovsha@castlebridge.ie"
+      },
+      {
+        "name": "Rana Saniei",
+        "url": "https://protect-network.eu/people/rana-saniei-esr9/",
+        "company": "Ontology Engineering Group, Universidad Politécnica de Madrid",
+        "companyURL": "https://oeg.fi.upm.es/",
+        "mailto": "r.sanieis@upm.es"
+      },
+      {
+        "name": "Jana Misic",
+        "url": "https://protect-network.eu/people/jana-misic-esr-14/",
+        "company": "Rathenau Institute",
+        "companyURL": "https://www.rathenau.nl/en",
+        "mailto": "j.misic@utwente.nl"
+      },
+      {
+        "name": "Víctor Rodríguez-Doncel",
+        "url": "http://cosasbuenas.es/",
+        "company": "Ontology Engineering Group, Universidad Politécnica de Madrid",
+        "companyURL": "https://oeg.fi.upm.es/",
+        "mailto": "vrodriguez@fi.upm.es"
+      }
+      ],
+
+    };
+  </script>
+  <style type="text/css">
+    .indent {
+      margin-left: 40px;
+    }
+
+    .head a:hover>img[src*='ogc'] {
+      opacity: 0.8;
+    }
+
+    .table-top {
+      background-color: grey;
+      text-align: center;
+      border-width: 5px;
+      color: white;
+      font-size: 15px;
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+
+    }
+
+    .table-title {
+      background-color: rgba(128, 128, 128, 0.712);
+      text-align: center;
+      border-width: 5px;
+      color: white;
+      font-size: 14px;
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+    }
+
+    .table-cell {
+      font-size: 13px;
+      border-style: solid;
+
+    }
+  </style>
+</head>
+
+<body>
+  <section id="abstract">
+    <p></p>
+  </section>
+  <section id="sotd">
+    <p></p>
+  </section>
+  <section class="informative">
+    <h2>Introduction</h2>
+    <!-- <h2 id="x2-introduction"> -->
+    <!-- <bdi class="secno">2. </bdi>Introduction -->
+    <a class="self-link" aria-label="§" href="https://w3id.org/hart/main.html#intro"></a>
+    </h2>
+    <p>
+      In this document we present a catalog of AI risks and harms in the health domain that mirrors the risks of a
+      variety of different AI
+      applications listed in the AIAAIC Repository. The majority of AI systems informing our catalog of risks is applied
+      in
+      the US context. It is thus important to keep the regulatory differences in mind when investigating the parallels
+      between
+      the AI systems being applied in the US vs. their application in the EU context.
+      The catalog focuses on AI systems applied in both public health and healthcare contexts. We chose a wider scope
+      for
+      selecting the use cases informing the taxonomy since many AI applications may be developed for personal care
+      contexts
+      but are designed with the intention to promote public health by either making processes in healthcare more
+      cost-efficient, allowing for better triaging in clinical settings or by providing the data for health research
+      with high
+      public health relevance. The AI applications we chose were developed for the following purposes:
+      (Prediction-based)
+      diagnosis, clinical care, health research, drug development, health promotion, disease prevention, outbreak
+      response,
+      and health system management and planning. We found several use cases with health relevance related to workplace
+      well-being or advertising that we excluded, since we focus on the professional health context.
+
+    </p>
+    <p>
+
+      Our catalog can be used for ethical and legal risk assessments of AI systems as well as the basis for
+      interdisciplinary
+      work on the risks of AI. As will become evident from our discussion of the current state of debate in the ethical,
+      legal, and social science literature, it is often not clear how the addressed risks are conceptualized. We thus
+      aim for
+      a clear understanding of risks that include a risk source, the actual risk, as well as the risk impact. By
+      establishing
+      this notion of risk, we hope to contribute to a better understanding of ethical and legal risk assessment that
+      allows
+      comparison between different methodologies, and facilitates communication in interdisciplinary groups conducting
+      ethical
+      and legal risk assessments of AI systems.
+
+
+      In the following sections we provide the competency questions which we believe our taxonomy could answer.
+  </section>
+
+
+  <!-- ORSD Table -->
+  <section id="orsdtable">
+    <h2 id="orsdtable">
+      <bdi class="secno"></bdi>Ontology Requirement Specification Document
+      <a class="self-link" aria-label="§" href="https://w3id.org/hart/main.html#orsdtable"></a>
+    </h2>
+
+    <p>
+      Below you can see the Ontology Requirement Specification Document (ORSD) table.
+    </p>
+
+    <table class="center">
+      <tr>
+        <th colspan=2 class="table-top">
+          hart (AI Risk in the health domain Ontology)
+        </th>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          1. Purpose
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          The purpose of this taxonomy is to support representing the specifications of AI systems in the health
+          sector, which then would be helpful in
+          understanding the risks of AI systems.
+          Eventually, the taxonomy is useful in understanding, identifying, evaluating and mitigating harms of AI in
+          the health sector.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          2. Scope
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          The scope of this ontology is limited to the main risks and AI concepts mentioned in AIRO, which is an
+          ontology for expressing risks
+          associated with AI systems, and then expands the concepts using instances
+          identified from AIAAIC.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          3. Implementation Language
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          OWL
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          4. Intended End-Users
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          1. Data controllers collecting personal data, or in particular, Data Protection Officers (DPO), which want
+          to document or/and represent the risk-related specifications of AI systems in health sector.
+          2. Data controllers or DPOs which want to assess the potential risks of using AI systems for different
+          purposes in health sector.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          5. Intended Uses
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          1. Representing/Documentation of the risk-related specifications of AI systems in health domain.<br>
+          2. Understanding what are the risks of an AI Systems based on its specifications (e.g., utilised technology,
+          purpose, data subjects etc.)<br>
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          6. Ontology Requirements
+        </th>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          a. Non-Functional Requirements
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          NFR 1. The ontology should be published online, following the FAIR principle[].
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          b. Functional Requirements: Competency Questions
+        </th>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Type of AI System
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ1. What types of AI applications are available in the health sector?<br>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Purpose of AI System
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ2. What are the purposes of using AI in the healthcare sector?<br>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Technology/Techniques utilised in AI System
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ3. Which AI techniques are utilised in AI systems used in the health domain?<br>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Source of Risk in the Health domain
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ4. What types of events can be the source of risk in the health domain?<br>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Type of Risks in Diagnostic Apps
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ5. What types of risks are associated with diagnostic applications?<br>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Type of Risks with use of ML in Diagnistic Apps
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ6. What types of risks are associated with use of machine learning (ML) in diagnostic applications?<br>
+
+        </td>
+      </tr>
+      <tr>
+        <th class="table-title">
+          Potential Negative Impacts
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ7. What are the potential negative impacts of AI in the health sector?<br>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="table-title">
+          Potential Impacted Entities
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ8.Who can be impacted by AI systems utilised in the health sector?
+
+        </td>
+      </tr>
+    </table>
+  </section>
+  <!-- ORSD Table -->
+
+
+  <section id="Namespaces">
+    <h2>Namespaces</h2>
+
+    <table class="def">
+      <tbody>
+        <tr>
+          <th>Prefix</th>
+          <th>Namespace</th>
+        </tr>
+        <tr>
+          <td>hart</td>
+          <td>http://wwww3id.org/hart#</td>
+        </tr>
+        <tr>
+          <td>AIRO</td>
+          <td>http://www.w3id.org/AIRO#</td>
+        </tr>
+        <tr>
+          <td>rdfs</td>
+          <td>http://www.w3.org/2000/01/rdf-schema#</td>
+        </tr>
+        <tr>
+          <td>owl</td>
+          <td>http://www.w3.org/2002/07/owl#</td>
+        </tr>
+        <tr>
+          <td>dct</td>
+          <td>http://purl.org/dc/terms/</td>
+        </tr>
+        <tr>
+          <td>ns1</td>
+          <td>http://purl.org/vocab/vann/</td>
+        </tr>
+        <tr>
+          <td>xsd</td>
+          <td>http://www.w3.org/2001/XMLSchema#</td>
+        </tr>
+        <td>dpv</td>
+        <td>http://www.w3.org/ns/dpv#</td>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+  </section>
+
+  <!-- <section id="conformance">
+    <p>
+      This is required for specifications that contain normative material.
+    </p>
+  </section> -->
+  <section id="specs">
+    <h2 id="spec">
+      <bdi class="secno"></bdi>Specification
+      <a class="self-link" aria-label="§" href=""></a>
+    </h2>
+    <p>
+      In this section, the classes and properties of the taxonomy are listed. .
+    </p>
+    <section id="aisystem">
+      <h3 id="1-aisystem">
+        <bdi class="secno"> </bdi>AI System
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#AISystem"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents a software that is developed with one or more of the AI Approaches and can, for a given set
+              of human-defined
+              objectives, generate outputs such as content, predictions, recommendations, or decisions influencing the
+              environments
+              they interact with.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO: AISystem</td>
+          </tr>
+          <tr>
+            <th>Source:</th>
+            <td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN">AI Act, Art
+                3(1)</a>,</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="aicapability">
+      <h3 id="1-aicapability">
+        <bdi class="secno"> </bdi>AI Capability
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#AICapability"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>The capability of AI for which it is developed.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart: AICapability</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="facialrecognition">
+      <h3 id="1-facialrecognition">
+        <bdi class="secno"> </bdi>Facial Recognition
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#FacialRecognition"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart: FacialRecognition</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart: AICapability</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="textanalys">
+      <h3 id="1-textanalys">
+        <bdi class="secno"> </bdi> Text Analysis
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#TextAnalysis"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:TextAnalysis</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart: AICapability</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="voicerecognition">
+      <h3 id="1-voicerecognition">
+        <bdi class="secno"> </bdi>Voice Recognition
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#VoiceRecognition"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Property to associate processing activity to its frequency.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart: VoiceRecognition</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart: AICapability</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="actor">
+      <h3 id="1-actor">
+        <bdi class="secno"> </bdi>Actor
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Actor"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Actor</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="AIProvider">
+      <h3 id="1-AIProvider">
+        <bdi class="secno"> </bdi>AIProvider
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#AIProvider"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>A natural or legal person, public authority, agency or other body that develops an AI system or that has
+              an AI system
+              developed with a view to placing it on the market or putting it into service under its own name or
+              trademark, whether
+              for payment or free of charge.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:AIProvider</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: Actor</td>
+          </tr>
+          <tr>
+            <th>Source:</th>
+            <td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN">AI Act</a>,
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="GovernmentAgency">
+      <h3 id="1-GovernmentAgency">
+        <bdi class="secno"> </bdi>Government Agency
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#GovernmentAgency"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Indicates agencies linked to ministeries, municipalities, etc.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:GovernmentAgency</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: AIProvider</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PrivateCompany">
+      <h3 id="1-PrivateCompany">
+        <bdi class="secno"> </bdi>Private Company
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#PrivateCompany"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Indicates a private company who develop or deploy the AI system for financial profit.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:PrivateCompany</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: AIProvider</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PublicOrganization">
+      <h3 id="1-PublicOrganization">
+        <bdi class="secno"> </bdi>Public Organization
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#PublicOrganisation"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Indicates public health organisations such as public health agencies, Public bodies, and associations.
+            </td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:PublicOrganization</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: AIProvider</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PublicHealthOrganisation">
+      <h3 id="1-PublicHealthOrganisation">
+        <bdi class="secno"> </bdi>Public Health Organisation
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#PublicHealthOrganisation"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart: PublicHealthOrganisation</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart: PublicOrganisation</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="ResearchFacility">
+      <h3 id="1-ResearchFacility">
+        <bdi class="secno"> </bdi>Research Facility
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#ResearchFacility"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Indicates educational and research facilities such as universities, research insitutes, whether they are
+              private or
+              public.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:ResearchFacility</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart: AIProvider</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="AITechnique">
+      <h3 id="1-AITechnique">
+        <bdi class="secno"> </bdi>AI Technique
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#AITechnique"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents the main approaches and techniques used for development of AI systems.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:AITechnique</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="ComputerVision">
+      <h3 id="1-ComputerVision">
+        <bdi class="secno"> </bdi>Computer Vision
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#ComputerVision"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to acquiring, processing, and interpreting visual data.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:ComputerVision</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AITechnique</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="MachineLearning">
+      <h3 id="1-MachineLearning">
+        <bdi class="secno"> </bdi>Machine Learning
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#MachineLearning"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>A process by which a functional unit improves its performance by acquiring new knowledge or skills or by
+              reorganizing
+              existing knowledge or skills.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:MachineLearning</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AITechnique</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DeepLearning">
+      <h3 id="1-DeepLearning">
+        <bdi class="secno"> </bdi>Deep Learning
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DeepLearning"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>An approach to creating rich hierarchical representations through the training of neural networks with
+              many hidden
+              layers.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DeepLearning</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: MachineLearning</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="NaturalLanguageProcessing">
+      <h3 id="1-NaturalLanguageProcessing">
+        <bdi class="secno"> </bdi>Natural Language Processing
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#NaturalLanguageProcessing"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to information processing based upon natural-language understanding and natural language
+              generation.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:NaturalLanguageProcessing</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AITechnique</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Robotics">
+      <h3 id="1-Robotics">
+        <bdi class="secno"> </bdi>Robotics
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Robotics"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Science and practice of designing, manufacturing, and applying robots.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Robotics</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AITechnique</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+    <section id="AreaOfImpact">
+      <h3 id="1-AreaOfImpact">
+        <bdi class="secno"> </bdi>Area Of Impact
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#AreaOfImpact"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents areas that AI might have impact on.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="FinancialStatus">
+      <h3 id="1-FinancialStatus">
+        <bdi class="secno"> </bdi>Financial Status
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#FinancialStatus"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:FinancialStatus</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Justice">
+      <h3 id="1-Justice">
+        <bdi class="secno"> </bdi>Justice
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Justice"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Justice</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PublicHealth">
+      <h3 id="1-PublicHealth">
+        <bdi class="secno"> </bdi>Public Health
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#PublicHealth"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:PublicHealth</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Right">
+      <h3 id="1-Right">
+        <bdi class="secno"> </bdi>Right
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Right"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Right</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="RightToDataProtection">
+      <h3 id="1-RightToDataProtection">
+        <bdi class="secno"> </bdi>Right to Data Protection
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#RightToDataProtection"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:RightToDataProtection</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: Right</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="RightToNon-Discrimination">
+      <h3 id="1-RightToNon-Discrimination">
+        <bdi class="secno"> </bdi>Right To Non-Discrimination
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#RightToNon-Discrimination"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:RightToNon-Discrimination</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: Right</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Well-Being">
+      <h3 id="1-Well-Being">
+        <bdi class="secno"> </bdi>Well-Being
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Well-Being"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Well-Being</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: AreaOfImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Autonomy">
+      <h3 id="1-Autonomy">
+        <bdi class="secno"> </bdi>Autonomy
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Autonomy"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Autonomy</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: Well-Being</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Health">
+      <h3 id="1-Health">
+        <bdi class="secno"> </bdi>Health
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Health"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Health</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: Well-Being</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PhysicalHealth">
+      <h3 id="1-PhysicalHealth">
+        <bdi class="secno"> </bdi>PhysicalHealth
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#PhysicalHealth"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents physical health</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:PhysicalHealth</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: Health</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PsychologicalHealth">
+      <h3 id="1-PsychologicalHealth">
+        <bdi class="secno"> </bdi>PsychologicalHealth
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#PsychologicalHealth"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents psychological health.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:PsychologicalHealth</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>AIRO: Health</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Security">
+      <h3 id="1-Security">
+        <bdi class="secno"> </bdi>Security
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Security"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Security</td>
+          </tr>
+          <tr>
+            <th>SubClass:of</th>
+            <td>hart: Well-Being</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Event">
+      <h3 id="1-Event">
+        <bdi class="secno"> </bdi>Event
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Event"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Event</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Consequence">
+      <h3 id="1-Consequence">
+        <bdi class="secno"> </bdi>Consequence
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Consequence"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Outcome of an event affecting objectives.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Event</td>
+          </tr>
+          <tr>
+            <th>Source:</th>
+            <td>ISO 31000, 3.6</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Impact">
+      <h3 id="1-Impact">
+        <bdi class="secno"> </bdi>Impact
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Impact"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents outcomes of a consequence on persons, groups, facilities, environment, etc.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Impact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="FundamentalRightsInfringement">
+      <h3 id="1-FundamentalRightsInfringement">
+        <bdi class="secno"> </bdi>Fundamental Rights Infringement
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#FundamentalRightsInfringement"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:FundamentalRightsInfringement</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: Impact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UnequalAccessToHealthcare">
+      <h3 id="1-UnequalAccessToHealthcare">
+        <bdi class="secno"> </bdi>Unequal Access To Health care
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UnequalAccessToHealthcare"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UnequalAccessToHealthcare</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Impact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="ExclusionOfPatients">
+      <h3 id="1-ExclusionOfPatients">
+        <bdi class="secno"> </bdi>Exclusion Of Patients
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#ExclusionOfPatients"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:ExclusionOfPatients</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:UnequalAccessToHealthcare</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UnequalDistributionOfHealthResources">
+      <h3 id="1-UnequalDistributionOfHealthResources">
+        <bdi class="secno"> </bdi>Unequal Distribution Of Health Resources
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UnequalDistributionOfHealthResources"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UnequalDistributionOfHealthResources</td>
+          </tr>
+          <tr>
+            <th>SubClass of::</th>
+            <td>AIRO:Impact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="WellbeingImpact">
+      <h3 id="1-WellbeingImpact">
+        <bdi class="secno"> </bdi>Wellbeing Impact
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#WellbeingImpact"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents impact of AI on persons' health and wellbeing.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:WellbeingImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Death">
+      <h3 id="1-Death">
+        <bdi class="secno"> </bdi>Death
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Death"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents death of a person caused by AI.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Death</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:WellbeingImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Injury">
+      <h3 id="1-Injury">
+        <bdi class="secno"> </bdi>Injury
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Injury"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents physical injuries caused by AI.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Injury</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: WellbeingImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Hemorrhage">
+      <h3 id="1-Hemorrhage">
+        <bdi class="secno"> </bdi>Hemorrhage
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Hemorrhage"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Hemorrhage</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: Injury</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PsychologicalHarm">
+      <h3 id="1-PsychologicalHarm">
+        <bdi class="secno"> </bdi>Psychological Harm
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#PsychologicalHarm"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Represents psychological injuries caused by AI.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:PsychologicalHarm</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO: WellbeingImpact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="FeelingOfConstantSurveillance">
+      <h3 id="1-FeelingOfConstantSurveillance">
+        <bdi class="secno"> </bdi>Feeling of Constant Surveillance
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#FeelingOfConstantSurveillance"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:FeelingOfConstantSurveillance</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:PsychologicalHarm</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="IncreasedAnxietyLevel">
+      <h3 id="1-IncreasedAnxietyLevel">
+        <bdi class="secno"> </bdi>Increased Anxiety Level
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#IncreasedAnxietyLevel"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:IncreasedAnxietyLevel</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:PsychologicalHarm</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="InaccurateOutcome">
+      <h3 id="1-InaccurateOutcome">
+        <bdi class="secno"> </bdi>Inaccurate Outcome
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#InaccurateOutcome"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:InaccurateOutcome</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Misdiagnosis">
+      <h3 id="1-Misdiagnosis">
+        <bdi class="secno"> </bdi>Misdiagnosis
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Misdiagnosis"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Misdiagnosis</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:InaccurateOutcome</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Overdiagnosis">
+      <h3 id="1-Overdiagnosis">
+        <bdi class="secno"> </bdi>Overdiagnosis
+        <a class="self-link" aria-label="§" href="<https://w3id.org/hart#Overdiagnosis>"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Overdiagnosis</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:InaccurateOutcome</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="MismanagementOfHealthResources">
+      <h3 id="1-MismanagementOfHealthResources">
+        <bdi class="secno"> </bdi>Mismanagement of Health Resources
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#MismanagementOfHealthResources"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:MismanagementOfHealthResources</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="PrivacyViolation">
+      <h3 id="1-PrivacyViolation">
+        <bdi class="secno"> </bdi>Privacy Violation
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#PrivacyViolation"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:PrivacyViolation</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="SurgeryComplication">
+      <h3 id="1-SurgeryComplication">
+        <bdi class="secno"> </bdi>Surgery Complication
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#SurgeryComplication"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:SurgeryComplication</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UnfairOutcome">
+      <h3 id="1-UnfairOutcome">
+        <bdi class="secno"> </bdi>Unfair Outcome
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UnfairOutcome"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UnfairOutcome</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Consequence</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Risk">
+      <h3 id="1-Risk">
+        <bdi class="secno"> </bdi>Risk
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Risk"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Indicates a risk (of harm) associated with an AI system.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Event</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Bias">
+      <h3 id="1-Bias">
+        <bdi class="secno"> </bdi>Bias
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Bias"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Bias</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="GenderBias">
+      <h3 id="1-GenderBias">
+        <bdi class="secno"> </bdi>Gender Bias
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#GenderBias"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:GenderBias</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:Bias</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="RacialBias">
+      <h3 id="1-RacialBias">
+        <bdi class="secno"> </bdi>Racial Bias
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#RacialBias"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Racial Bias</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:Bias</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DataDe-identification">
+      <h3 id="1-DataDe-identification">
+        <bdi class="secno"> </bdi>Data De-identification
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DataDe-identification"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DataDe-identification</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="HardwareMalfunctioning">
+      <h3 id="1-HardwareMalfunctioning">
+        <bdi class="secno"> </bdi>Hardware Malfunctioning
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#HardwareMalfunctioning"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:HardwareMalfunctioning</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="LowAccuracy">
+      <h3 id="1-LowAccuracy">
+        <bdi class="secno"> </bdi>Low Accuracy
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#LowAccuracy"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:LowAccuracy</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="SensitiveDataExposure">
+      <h3 id="1-SensitiveDataExposure">
+        <bdi class="secno"> </bdi>Sensitive Data Exposure
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#SensitiveDataExposure"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:SensitiveDataExposure</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UnlawfulUseOfSensitiveData">
+      <h3 id="1-UnlawfulUseOfSensitiveData">
+        <bdi class="secno"> </bdi>Unlawful Use of Sensitive Data
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UnlawfulUseOfSensitiveData"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UnlawfulUseOfSensitiveData</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="RiskSource">
+      <h3 id="1-RiskSource">
+        <bdi class="secno"> </bdi>Risk Source
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#RiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition"</th>
+            <td>Indicates an element that has the potential give rise to a risk.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:RiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Event</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Algorithm-RelatedRiskSource">
+      <h3 id="1-Algorithm-RelatedRiskSource">
+        <bdi class="secno"> </bdi>Algorithm-Related Risk Source
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Algorithm-RelatedRiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Algorithm-RelatedRiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:RiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DataSet-RelatedRiskSource">
+      <h3 id="1-DataSet-RelatedRiskSource">
+        <bdi class="secno"> </bdi>DataSet-Related Risk Source
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DataSet-RelatedRiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DataSet-RelatedRiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:RiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Hardware-RelatedRiskSource">
+      <h3 id="1-Hardware-RelatedRiskSource">
+        <bdi class="secno"> </bdi>Hardware-Related Risk Source
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Hardware-RelatedRiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Hardware-RelatedRiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:RiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UseOfWrongFeatures">
+      <h3 id="1-UseOfWrongFeatures">
+        <bdi class="secno"> </bdi>UseOf Wrong Features
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UseOfWrongFeatures"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UseOfWrongFeatures</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:Algorithm-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="InsufficientTrainingData">
+      <h3 id="1-InsufficientTrainingData">
+        <bdi class="secno"> </bdi>Insufficient Training Data
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#InsufficientTrainingData"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:InsufficientTrainingData</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:DataSet-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="SensitiveData-RelatedRiskSource">
+      <h3 id="1-SensitiveData-RelatedRiskSource">
+        <bdi class="secno"> </bdi>Sensitive Data-Related RiskSource
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#SensitiveData-RelatedRiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:SensitiveData-RelatedRiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:DataSet-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="NotAnonymisingSensitiveData">
+      <h3 id="1-NotAnonymisingSensitiveData">
+        <bdi class="secno"> </bdi>Not Anonymising Sensitive Data
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#NotAnonymisingSensitiveData"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:NotAnonymisingSensitiveData</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:SensitiveData-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="TrainingDataRiskSource">
+      <h3 id="1-TrainingDataRiskSource">
+        <bdi class="secno"> </bdi>Training Data Risk Source
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#TrainingDataRiskSource"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:TrainingDataRiskSource</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:DataSet-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="UnrepresentativeTrainingDataSet">
+      <h3 id="1-UnrepresentativeTrainingDataSet">
+        <bdi class="secno"> </bdi>Unrepresentative Training DataSet
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#UnrepresentativeTrainingDataSet"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:UnrepresentativeTrainingDataSet</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:TrainingDataRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DeviceMalfunctioning">
+      <h3 id="1-DeviceMalfunctioning">
+        <bdi class="secno"> </bdi>Device Malfunctioning
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DeviceMalfunctioning"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DeviceMalfunctioning</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:Hardware-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="TechnicalFailure">
+      <h3 id="1-TechnicalFailure">
+        <bdi class="secno"> </bdi>Technical Failure
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#TechnicalFailure"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Term:</th>
+            <td>hart:TechnicalFailure</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>hart:Hardware-RelatedRiskSource</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Purpose">
+      <h3 id="1-Purpose">
+        <bdi class="secno"> </bdi>Purpose
+        <a class="self-link" aria-label="§" href="https://w3id.org/AIRO#Purpose"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to the use for which an AI system is intended by the provider, including the specific context and
+              conditions of
+              use, as specified in the information supplied by the provider in the instructions for use, promotional or
+              sales
+              materials and statements, as well as in the technical documentation.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Purpose</td>
+          </tr>
+          <tr>
+            <th>Source:</th>
+            <td>AI Act, Art 3(12)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Advertising">
+      <h3 id="1-Advertising">
+        <bdi class="secno"> </bdi>Advertising
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Advertising"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to the use of health-related data or information for promoting consumer products.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Advertising</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="ClinicalCare">
+      <h3 id="1-ClinicalCare">
+        <bdi class="secno"> </bdi>Clinical Care
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#ClinicalCare"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI for identification of risk patients, aid in treatment decisions, triage.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:ClinicalCare</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="Diagnosis">
+      <h3 id="1-Diagnosis">
+        <bdi class="secno"> </bdi>Diagnosis
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#Diagnosis"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI systems for classification and identification of symptoms, anticipation of symptoms.
+            </td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:Diagnosis</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DiseasePrevention">
+      <h3 id="1-DiseasePrevention">
+        <bdi class="secno"> </bdi>Disease Prevention
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DiseasePrevention"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI for identification of public health risks.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DiseasePrevention</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="DrugDevelopment">
+      <h3 id="1-DrugDevelopment">
+        <bdi class="secno"> </bdi>Drug Development
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#DrugDevelopment"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use od AI for simplified or accelerated development of medications.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:DrugDevelopment</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="HealthPromotion">
+      <h3 id="1-HealthPromotion">
+        <bdi class="secno"> </bdi>Health Promotion
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#HealthPromotion"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI for identification of risk populations to target with public health measures, e.g.
+              information
+              campaigns and behavior change.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:HealthPromotion</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="HealthResearch">
+      <h3 id="1-HealthResearch">
+        <bdi class="secno"> </bdi>Health Research
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#HealthResearch"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to health research using data from electronic health records.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:HealthResearch</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="HealthSystemManagementAndPlanning">
+      <h3 id="1-HealthSystemManagementAndPlanning">
+        <bdi class="secno"> </bdi>Health System Management and Planning
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#HealthSystemManagementAndPlanning"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI for resource allocation, optimization of processes, support for decision-making,
+              scheduling, and
+              identification of staffing requirements.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:HealthSystemManagementAndPlanning</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="OutbreakResponse">
+      <h3 id="1-OutbreakResponse">
+        <bdi class="secno"> </bdi>Outbreak Response
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#OutbreakResponse"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to use of AI for transmission tracking, detection of outbreaks, and enforcement of restriction
+              measures.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:OutbreakResponse</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="WorkplaceWell-being">
+      <h3 id="1-WorkplaceWell-being">
+        <bdi class="secno"> </bdi>Workplac eWell-being
+        <a class="self-link" aria-label="§" href="https://w3id.org/hart#WorkplaceWell-being"></a>
+      </h3>
+      <table class="def propdef">
+        <tbody>
+          <tr>
+            <th>Definition:</th>
+            <td>Refers to the use of AI for promotion of well-being at the workplace.</td>
+          </tr>
+          <tr>
+            <th>Term:</th>
+            <td>hart:WorkplaceWell-being</td>
+          </tr>
+          <tr>
+            <th>SubClass of:</th>
+            <td>AIRO:Purpose</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+</body>
+
+</html>
